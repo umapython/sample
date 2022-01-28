@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PYTHON WORLD</title>
+    <link rel="stylesheet" href="{% static 'wwcodeapp/css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'wwcodeapp/css/card.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="{% static 'wwcodeapp/img/globe.jpg' %}" width="112" height="28">
+            <p class="navbar-item">FOR LEARNING</p>
+            
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'wwcodeapp:index' %}">
+             <span class="material-icons">
+              home
+             </span>
+              Home
+            </a>
+            <a href="{% url 'wwcodeapp:cards' %}" class="navbar-item">
+                <span class="material-icons">
+                    question_answer
+                </span>Q/A
+            </a>
+      
+           <!--  <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>-->
+      
+             <!-- <div class="navbar-dropdown">-->
+                <a href="{% url 'wwcodeapp:details' %}" class="navbar-item">
+                    <span class="material-icons">
+                        add
+                        </span>
+                  ADD
+                </a>
+                <a class="navbar-item">
+                 <img src="{% static 'wwcodeapp/img/job.png' %}">
+                  Jobs
+                </a>
+                <a class="navbar-item">
+                  <span class="material-icons">
+                    contact_page
+                    </span>
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link is-arrowless">
+                    <span class="material-icons">
+                      link
+                      </span>
+                    Links
+                  </a>
+                  <div class="navbar-dropdown">
+                    <a href="{% url 'wwcodeapp:datas' %}" class="navbar-item">
+                      <span class="material-icons">
+                        import_export
+                        </span>
+                      IMPORT / EXPORT
+                    </a>
+                  </div>
+                </div>
+              <!--</div>
+            </div>-->
+          </div>
+      
+          
+        </div>
+        
+      </nav>
+      
+      <div class="container is-max-widescreen">
+        <div class="notification is-primary">
+          <center>PYTHON WORLD !- A BLOG FOR KNOWLEDGE EXCHANGE</center>
+        </div>
+      </div>
+      {% block content %}    
+        <div class="container">
+          <div class="columns is-desktop">
+            <div class="column">
+              <p class="title">
+                <img class="is-background" src="{% static 'wwcodeapp/img/mainbg.jpeg' %}" alt="" width="640" height="310" />
+                 
+              </p>
+            </div>
+            <div class="column">
+                         <br>Knowledge sharing is the act of exchanging information or understanding between individuals, teams, communities, or organizations. Knowledge may be explicit (meaning procedures and documents) or tacit (meaning intuitive and experience-based). Sharing knowledge is an intentional process that not only bolsters an individual's understanding but helps create or enhance an archive of accessible knowledge for others.
+
+              The concept of knowledge sharing is important because it helps individuals and businesses be more agile and adaptable in the face of change and helps ensure continued growth and survival. </div>
+          
+            </div>
+            
+        </div>
+      {% endblock content %}
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        EDIT FOOTER LATER</p>
+    </div>
+  </footer>
+  </body>
+</html>
+

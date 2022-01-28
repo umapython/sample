@@ -1,0 +1,55 @@
+{% extends 'wwcodeapp/details.html' %}
+{% block content %}
+
+<div class="container is-widescreen" >
+  <table class="table">
+    <tr>
+
+{% for i in qbank %}
+    {% if forloop.counter0|divisibleby:4 %}
+     <tr>
+    {% endif %}
+  {% for key,value in i.items %} 
+  <td>
+  <section class="card">
+        <div class="card-inner">
+            <article class="card-front">
+                {{value}}
+            </article>
+            <article class="card-back">
+              <br>
+              <form action="/cards/id={{key}}" method="GET">
+                {% csrf_token %}
+              <div class="is-centered">
+              <textarea class="textarea is-hovered" name="id{{key}}" id="id{{key}}" placeholder=""></textarea>
+              <br>
+              
+              <div class="field is-grouped">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="control">
+                  <button type="submit" class="button is-link">
+                    Save
+                  </button>
+                </p>
+                <p class="control">
+                  <button class="button is-danger">
+                    Cancel
+                  </button>
+                </p>
+                
+              </div>
+            </div> 
+          </form>              
+            </article>
+        </div>      
+  </section>
+</td>
+
+  {% endfor %}
+{% endfor %}
+
+</tr>
+</table>
+</div>
+
+{% endblock content %}
+ 

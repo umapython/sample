@@ -1,0 +1,52 @@
+{% extends 'wwcodeapp/index.html' %}
+{% block content %}
+<form name = "form" enctype = "multipart/form-data" 
+         action = "{% url 'wwcodeapp:datas' %}" method = "POST" >
+         {% csrf_token %}
+         
+         <br>
+         
+         
+         <div class="container" style = "max-width:900px;">
+            <center> 
+                  <input type="file"
+                  title="Upload excel file"
+                  name="excel_file"
+                  style="border: 1px solid black; padding: 5px;"
+                  required="required">
+                  <button style = "border:0px;background-color:#4285F4; margin-top:8%; 
+                  height:35px; width:20%; margin-left:19%;" type = "submit" value = "Login" >
+                  <strong>upload</strong>
+               </button>
+               
+            </center>
+			
+         
+      </form>
+      {% if excel_data %}
+      <br>
+      <table class="  table is-bordered is-striped is-narrow is-hoverable is-fullwidth  ">
+         <thead>
+           <tr>
+              <th>
+                  ID
+              </th>
+              <th>
+                 QUESTION
+               </th>
+           </tr>
+         </thead>
+         <tbody>  
+            {% for key,value in excel_data.items %}
+               <tr>
+                  {% for j in value %}
+                     <td>{{j}}</td>
+                  {% endfor %}
+               </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+         </div>
+
+{% endblock content %}
